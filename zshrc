@@ -41,3 +41,6 @@ fi
 if [ -f ~/.zshrc_local_after ]; then
     source ~/.zshrc_local_after
 fi
+
+#zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)

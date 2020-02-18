@@ -219,3 +219,30 @@ let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
+
+" Leader Shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=" "       " leader is space
+
+" Movement
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" Quick Save
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :wq<CR>
+"nmap <Leader>qq :qa!<CR>
+
+" Quick copy paste
+nmap <Leader>y "+y
+nmap <Leader>d "+d
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
