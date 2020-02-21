@@ -50,7 +50,6 @@ set hls " highlight search
 set listchars=tab:>>,nbsp:~ " set list to see tabs and non-breakable spaces
 set lbr " line break
 set scrolloff=5 " show lines above and below cursor (when possible)
-set noshowmode " hide mode
 set laststatus=2
 set backspace=indent,eol,start " allow backspacing over everything
 set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow O inserts
