@@ -104,7 +104,7 @@ function machine_name() {
 }
 
 # Host in a deterministically chosen color
-RPR_SHOW_HOST=true # Set to false to disable host in rhs prompt
+RPR_SHOW_HOST=false # Set to false to disable host in rhs prompt
 function RPR_HOST() {
     local colors
     colors=(cyan green yellow red pink)
