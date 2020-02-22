@@ -38,3 +38,6 @@ fi
 
 #auto-suggestions
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#fasd
+eval "$(fasd --init posix-alias zsh-hook)"
