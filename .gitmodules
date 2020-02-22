@@ -239,3 +239,6 @@
 [submodule "emacs.d/vendor/evil-surround"]
 	path = emacs.d/vendor/evil-surround
 	url = https://github.com/emacs-evil/evil-surround
+[submodule "vim/pack/vendor/start/vim-smoothie"]
+	path = vim/pack/vendor/start/vim-smoothie
+	url = https://github.com/psliwka/vim-smoothie.git
