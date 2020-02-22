@@ -21,12 +21,15 @@ if has('gui_running')
     let g:lightline = {'colorscheme': 'solarized'}
 elseif &t_Co < 256
     colorscheme default
-    set nocursorline " looks bad in this mode
+    "set nocursorline " looks bad in this mode
 else
     set background=dark
     let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
+    let g:solarized_termtrans = 1
     colorscheme solarized
     " customized colors
+    set t_Co=256
+    syntax enable
     highlight SignColumn ctermbg=234
     highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
@@ -245,3 +248,4 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+set runtimepath^=~/.vim/pack/vendor/start/vim-scala/
