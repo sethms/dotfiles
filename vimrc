@@ -42,14 +42,18 @@ endif
 filetype plugin indent on " enable file type detection
 set autoindent
 
+" Leader Shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=" "       " leader is space
+
 "---------------------
 " Basic editing config
 "---------------------
 set shortmess+=I " disable startup message
 set nu " number lines
 set rnu " relative line numbering
-set incsearch " incremental search (as string is being typed)
-set hls " highlight search
+" set incsearch " incremental search (as string is being typed)
+" set hls " highlight search
 set listchars=tab:>>,nbsp:~ " set list to see tabs and non-breakable spaces
 set lbr " line break
 set scrolloff=5 " show lines above and below cursor (when possible)
@@ -133,8 +137,14 @@ command -nargs=0 Sudow w !sudo tee % >/dev/null
 "---------------------
 " Plugin configuration
 "---------------------
+" multiple-cursors
+call plug#begin()
 
-" nerdtree
+Plug 'terryma/vim-multiple-cursors'
+
+call plug#end()
+
+" nerdtred
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
 
@@ -149,9 +159,12 @@ if has('python3')
 endif
 
 " ctrlp
-nnoremap ; :CtrlPBuffer<CR>
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_show_hidden = 1
+" nnoremap ; :CtrlPBuffer<CR>
+" let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_show_hidden = 1
+
+" fzf
+set rtp+=/usr/local/opt/fzf
 
 " ag / ack.vim
 command -nargs=+ Gag Gcd | Ack! <args>
@@ -175,18 +188,54 @@ nnoremap <Leader>r :SyntasticReset<CR>
 nnoremap <Leader>i :SyntasticInfo<CR>
 nnoremap <Leader>m :SyntasticToggleMode<CR>
 
+" Easymotion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" incsearch-easymotion
+" map z/ <Plug>(incsearch-easymotion-/)
+" map z? <Plug>(incsearch-easymotion-?)
+" map zg/ <Plug>(incsearch-easymotion-stay)
+"map <Leader>/ <Plug>(incsearch-easymotion-/)
+"map <Leader>? <Plug>(incsearch-easymotion-?)
+"map <Leader>g/ <Plug>(incsearch-easymotion-stay)
+let g:incsearch#auto_nohlsearch = 1
+" set hlsearch
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
 " easymotion
-map <Space> <Plug>(easymotion-prefix)
+map <Leader><Leader>  <Plug>(easymotion-prefix)
 
 " incsearch
 map / <Plug>(incsearch-forward)
 map ? <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" incsearch-easymotion
-map z/ <Plug>(incsearch-easymotion-/)
-map z? <Plug>(incsearch-easymotion-?)
-map zg/ <Plug>(incsearch-easymotion-stay)
+" Gif config
+map <Leader>/ <Plug>(easymotion-sn)
+omap <Leader>/ <Plug>(easymotion-tn)
+" map  n <Plug>(easymotion-next)
+" map  N <Plug>(easymotion-prev)
+" let g:EasyMotion_landing_highlight = 0
+" let g:EasyMotion_inc_highlight = 1
+
+" vim-sneak behaviour through easymotion
+nmap s <Plug>(easymotion-overwin-f2)
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>t <Plug>(easymotion-t2)
+
+
+
+" FZF.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-p> :Files<CR>
+nmap <leader>; :Buffers<CR>
 
 " argwrap
 nnoremap <Leader>w :ArgWrap<CR>
@@ -222,9 +271,7 @@ if filereadable($LOCALFILE)
     source $LOCALFILE
 endif
 
-" Leader Shortcuts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader=" "       " leader is space
+
 
 " Movement
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,5 +294,9 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+
+" Split with leader
+nnoremap <Leader>- :sp<CR>
+nnoremap <Leader>\| :vsp<CR>
 
 set runtimepath^=~/.vim/pack/vendor/start/vim-scala/

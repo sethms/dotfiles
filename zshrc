@@ -44,3 +44,5 @@ fi
 
 #zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

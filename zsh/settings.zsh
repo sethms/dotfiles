@@ -43,7 +43,8 @@ bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
 # Use incremental search
-bindkey "^R" history-incremental-search-backward
+#bindkey "^R" history-incremental-search-backward
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Disable shell builtins
 disable r
