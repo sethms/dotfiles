@@ -137,13 +137,6 @@ command -nargs=0 Sudow w !sudo tee % >/dev/null
 "---------------------
 " Plugin configuration
 "---------------------
-" multiple-cursors
-call plug#begin()
-
-Plug 'terryma/vim-multiple-cursors'
-
-call plug#end()
-
 " nerdtred
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFind<CR>
