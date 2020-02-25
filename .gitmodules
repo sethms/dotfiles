@@ -242,3 +242,6 @@
 [submodule "vim/pack/vendor/start/vim-smoothie"]
 	path = vim/pack/vendor/start/vim-smoothie
 	url = https://github.com/psliwka/vim-smoothie.git
+[submodule "vim/pack/vendor/start/rainbow_csv"]
+	path = vim/pack/vendor/start/rainbow_csv
+	url = https://github.com/mechatroner/rainbow_csv.git
