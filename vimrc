@@ -76,7 +76,10 @@ set smartcase
 " tab completion for files/bufferss
 set wildmode=longest,list
 set wildmenu
+" set nowrap
 set mouse+=a " enable mouse mode (scrolling, selection, etc)
+" turn off spellcheck underlining
+set nospell
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
     set ttymouse=xterm2
@@ -90,6 +93,10 @@ endif
 map <C-a> <Nop>
 map <C-x> <Nop>
 nmap Q <Nop>
+
+" horizontal scrolling
+nnoremap <C-]> 20zl " Scroll 20 characters to the right
+nnoremap <C-[> 20zh " Scroll 20 characters to the left
 
 " disable audible bell
 set noerrorbells visualbell t_vb=

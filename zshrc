@@ -1,4 +1,4 @@
-# Functions
+# S7Functions
 source ~/.shell/functions.sh
 
 # Allow local customizations in the ~/.shell_local_before file
@@ -46,3 +46,9 @@ fi
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+#### FIG ENV VARIABLES ####
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####
+
