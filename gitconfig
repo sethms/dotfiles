@@ -103,7 +103,7 @@
 
 [user]
 	# useConfigOnly = true
-	email = seth@narrative.io 
+	email = sethms@gmail.com
 	name = Seth
 
 [includeIf "gitdir:~/.dotfiles/"]
