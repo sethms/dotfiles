@@ -106,6 +106,9 @@
 	email = seth@narrative.io 
 	name = Seth
 
+[includeIf "gitdir:~/.dotfiles/"]
+    path = ~/dotfiles/.gitconfig
+
 [http]
 	cookieFile = ~/.gitcookies
 

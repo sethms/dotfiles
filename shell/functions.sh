@@ -12,6 +12,18 @@ path_prepend() {
     PATH="$1${PATH:+":$PATH"}"
 }
 
+co () {
+[[ -z $1 ]] && echo $0 include_term && exit
+file="/Users/sethshapiro/scripting/companies.csv"
+grep -ih "$1" "$file"
+}
+
+ca () {
+# [[ -z $1 ]] && echo $0 include_term && exit
+# cd "/Volumes/GoogleDrive/Shared drives/Customer Agreements/MSAs + Client Agreements/$1"
+cd "/Volumes/GoogleDrive/Shared drives/Customer Agreements/MSAs + Client Agreements/"
+}
+
 here() {
     local loc
     if [ "$#" -eq 1 ]; then
@@ -24,3 +36,5 @@ here() {
 }
 
 there="$HOME/.shell.here"
+
+# /Volumes/GoogleDrive/Shared drives/Customer Agreements/MSAs + Client Agreements/ID5
